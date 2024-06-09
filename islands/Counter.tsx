@@ -26,7 +26,7 @@ export default function Counter(props: CounterProps) {
   return (
     <div class="flex gap-8 py-6">
       <p onMouseEnter={onMouseEnter}>
-        Mouse over me for a bug
+        Mouse over me for signal
       </p>
       <p>
         {popOver.value}
