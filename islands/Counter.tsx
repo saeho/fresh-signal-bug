@@ -11,6 +11,8 @@ interface CounterProps {
 
 export default function Counter(props: CounterProps) {
 
+  const value = popOver.value;
+
   const onMouseEnter = () => {
     popOver.value = 'Hello world';
   };
@@ -26,7 +28,7 @@ export default function Counter(props: CounterProps) {
   return (
     <div class="flex gap-8 py-6">
       <p onMouseEnter={onMouseEnter}>
-        Mouse over me for signal
+        Mouse over me for signal {value}
       </p>
       <p>
         {popOver.value}
