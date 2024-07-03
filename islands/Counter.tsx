@@ -1,29 +1,30 @@
-// import type { Signal } from "@preact/signals";
-// import { useSignal } from "@preact/signals";
-// import { useEffect } from "preact/hooks";
+import type { Signal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
+import { useEffect } from "preact/hooks";
 import { Button } from "../components/Button.tsx";
 
 // const popOver = signal('');
 
-// interface CounterProps {
-//   count: Signal<number>;
-// }
+interface CounterProps {
+  count: Signal<number>;
+}
 
 export default function Counter(props: CounterProps) {
 
-  const popOver = { value: 'xyz' }; // useSignal('');
+  const popOver = useSignal('');
+  // const popOver = { value: 'xyz' };
 
   const onMouseEnter = () => {
-    // popOver.value = 'Hello world';
+    popOver.value = 'Hello world';
   };
 
-  // useEffect(() => {
-  //   return () => {
-  //     if (popOver.value) {
-  //       popOver.value = '';
-  //     }
-  //   };
-  // }, []);
+  useEffect(() => {
+    return () => {
+      if (popOver.value) {
+        popOver.value = '';
+      }
+    };
+  }, []);
 
   return (
     <div class="flex gap-8 py-6">
